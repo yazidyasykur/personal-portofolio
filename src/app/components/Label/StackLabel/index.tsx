@@ -1,0 +1,67 @@
+import React from "react";
+
+const stackList = [
+  {
+    key: "java",
+    stackName: "Java",
+    color: "#ec2025",
+    backgroundColor: "#FFFFFF",
+  },
+  {
+    key: "nextjs",
+    stackName: "NextJS",
+    color: "#FFFFFF",
+    backgroundColor: "#000000",
+  },
+  {
+    key: "javascript",
+    stackName: "JavaScript",
+    color: "#000000",
+    backgroundColor: "#F7DF1E",
+  },
+  {
+    key: "typescript",
+    stackName: "TypeScript",
+    color: "#FFFFFF",
+    backgroundColor: "#007ACC",
+  },
+  {
+    key: "jquery",
+    stackName: "jQuery",
+    color: "#000000",
+    backgroundColor: "#0769AD",
+  },
+  {
+    key: "saphybris",
+    stackName: "SAP Hybris",
+    color: "#008FD3",
+    backgroundColor: "#FFFFFF",
+  },
+  {
+    key: "spring",
+    stackName: "Spring",
+    color: "#FFFFFF",
+    backgroundColor: "#6DB33F",
+  },
+];
+
+const getStack = (stackName: string) => {
+  return stackList.find((item) => item.key === stackName);
+};
+
+const StackLabel = ({ stackName }: { stackName: string }) => {
+  const stack = getStack(stackName);
+  return (
+    <div
+      className="text-[10px] px-[5px] font-bold uppercase rounded-md"
+      style={{
+        backgroundColor: stack?.backgroundColor,
+        color: stack?.color,
+      }}
+    >
+      {stackName}
+    </div>
+  );
+};
+
+export default StackLabel;
