@@ -22,7 +22,8 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
   const rainDropVelocities: number[] = [];
 
   useEffect(() => {
-    if (!shouldRender) return;
+    if(!shouldRender) return;
+
     // SCENE
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x11111f, 0.002);
@@ -139,7 +140,9 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
 
     window.addEventListener("resize", handleResize);
 
-    render();
+    if(window){
+      render();
+    }
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -147,7 +150,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
     };
   }, [shouldRender]);
 
-  return <div ref={sceneRef} className="absolute top-0 -z-50" />;
+  return <div ref={sceneRef} style={{ display: shouldRender ? "block" : "none" }} className="absolute top-0 -z-50" />;
 };
 
 export default RainScene;
