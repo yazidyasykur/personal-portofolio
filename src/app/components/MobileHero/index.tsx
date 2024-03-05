@@ -13,6 +13,7 @@ import {
   faHackerrank,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import NameTag from "../NameTag";
 
 type Props = {};
 
@@ -37,25 +38,7 @@ const MobileHero = (props: Props) => {
   return (
     <div className="px-4 h-screen flex items-center">
       <div>
-        <div className="font-bold">
-          <Heading1>Yazid Yasykur</Heading1>
-          <JobTitle>
-            <div className="inline-block w-3 h-3 bg-green-600 mr-2" />
-            <TypeAnimation
-              sequence={typingSequence}
-              deletionSpeed={50}
-              speed={10}
-              repeat={999}
-              className="after:text-green-600"
-            />
-          </JobTitle>
-        </div>
-        <div className="mt-8 max-w-80">
-          <Paragraph1>
-            I skillfully craft pixel-perfect interfaces with front-end finesse
-            and backend excellence.
-          </Paragraph1>
-        </div>
+        <NameTag />
         <div className="mt-8 flex gap-4 text-3xl">
           <Link href="https://linkedin.com/in/yazid-yasykur" target="_blank">
             <FontAwesomeIcon
