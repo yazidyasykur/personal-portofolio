@@ -11,7 +11,7 @@ const MobileDrawer = (props: Props) => {
 
   return (
     <div className="block md:hidden">
-      <div className="fixed h-20 justify-between bg-black w-full bg-opacity-30 flex items-center px-8">
+      <div className="fixed h-20 justify-between bg-black w-full bg-opacity-30 flex items-center px-4">
         <div>Yazid Yasykur</div>
         <div className="scale-75">
           <HamburgerIcon />

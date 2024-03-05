@@ -9,7 +9,6 @@ import MobileDrawer from "./components/Drawer";
 export default function Home() {
   return (
     <MainLayout>
-      <MobileDrawer />
       <div className="grid grid-cols-12">
         <div className="hidden md:block col-span-5 ">
           <LeftContainer />

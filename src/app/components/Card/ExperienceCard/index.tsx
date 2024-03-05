@@ -9,7 +9,7 @@ export type ExperienceCardProps = {
 const ExperienceCard = ({ data }: ExperienceCardProps) => {
   return (
     <div
-      className="grid grid-cols-12 gap-4 px-8 py-4 cursor-pointer rounded-md transition-all hover:bg-white hover:shadow-lg hover:bg-opacity-10 "
+      className="grid grid-cols-1 md:grid-cols-12 gap-4 px-8 py-4 cursor-pointer rounded-md transition-all hover:bg-white hover:shadow-lg hover:bg-opacity-10 "
       key={data.key}
     >
       <div className="col-span-4 text-sm uppercase">

@@ -4,10 +4,34 @@ import Heading1 from "../../Typography/Heading1";
 import Heading2 from "../../Typography/Heading2";
 import ExperienceContainer from "../ExperienceContainer";
 import ProjectContainer from "../ProjectContainer";
+import JobTitle from "../../Typography/Title";
+import { TypeAnimation } from "react-type-animation";
+import NameTag from "../../NameTag";
+import MobileHero from "../../MobileHero";
 
 const RightContainer = () => {
+  const typingSequence = [
+    "Software Engineer",
+    2000,
+    "Software Developer",
+    2000,
+    "Frontend Engineer",
+    2000,
+    "Frontend Developer",
+    2000,
+    "Fullstack Engineer",
+    2000,
+    "Fullstack Developer",
+    2000,
+    "Web Developer",
+    2000,
+  ];
+
   return (
-    <div className="py-16 ">
+    <div className="py-4 md:py-16">
+      <div className="block md:hidden">
+        <MobileHero />
+      </div>
       <div className="px-4 md:px-8 text-justify">
         <Paragraph1>
           &nbsp;&nbsp;With a year of hands-on experience as a Full-stack
