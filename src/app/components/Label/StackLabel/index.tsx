@@ -43,6 +43,36 @@ const stackList = [
     color: "#FFFFFF",
     backgroundColor: "#6DB33F",
   },
+  {
+    key: "nodejs",
+    stackName: "Node.js",
+    color: "#68A063",
+    backgroundColor: "#FFFFFF",
+  },
+  {
+    key: "express",
+    stackName: "Express",
+    color: "#000000",
+    backgroundColor: "#FFFFFF",
+  },
+  {
+    key: "sqlserver",
+    stackName: "SQL Server",
+    color: "#CC2927",
+    backgroundColor: "#FFFFFF",
+  },
+  {
+    key: "tailwind",
+    stackName: "Tailwind CSS",
+    color: "#38B2AC",
+    backgroundColor: "#F9FAFB",
+  },
+  {
+    key: "antdesign",
+    stackName: "Ant Design",
+    color: "#FFFFFF",
+    backgroundColor: "#1890FF",
+  },
 ];
 
 const getStack = (stackName: string) => {

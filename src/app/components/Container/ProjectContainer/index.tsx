@@ -7,56 +7,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "../../Card/ProjectCard";
 
-export type ExperienceItem = {
+export type ProjectItem = {
   key: string;
-  startPeriod: string;
-  endPeriod: string;
   isCurrentJob: boolean;
   titleList: string[];
   companyName: string;
   description: string;
   stackList: string[];
+  url?: string;
+  label?: string;
 };
 
 const ProjectContainer = () => {
-  const experienceItem: ExperienceItem[] = [
+  const experienceItem: ProjectItem[] = [
     {
       key: "1",
-      startPeriod: "Dec 2016",
-      endPeriod: "Apr 2020",
       isCurrentJob: true,
-      titleList: ["frontend engineer", "fullstack engineer"],
-      companyName: "PT. Astra Digital Mobil",
+      titleList: ["backend engineer"],
+      companyName: "PT. Best Agro International",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id arcu aliquam, mollis urna id, molestie urna. Nulla vitae massa et est hendrerit eleifend at quis magna. Nunc condimentum turpis.",
-      stackList: [
-        "javascript",
-        "typescript",
-        "jquery",
-        "nextjs",
-        "java",
-        "saphybris",
-        "spring",
-      ],
+        "I architect and develop the backend for a customer service system, encompassing a WhatsApp chatbot which integrated with third-party API's, streamlined ticketing processes, and robust CRUD functionalities. I ensure seamless integration and efficient handling of customer inquiries and data management.",
+      stackList: ["javascript", "nodejs", "sqlserver", "express"],
     },
     {
       key: "2",
-      startPeriod: "Dec 2016",
-      endPeriod: "Apr 2020",
       isCurrentJob: true,
-      titleList: ["frontend engineer", "fullstack engineer"],
-      companyName: "PT. Astra Digital Mobil",
+      titleList: ["Frontend Engineer"],
+      companyName: "Sustainable Rituals",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id arcu aliquam, mollis urna id, molestie urna. Nulla vitae massa et est hendrerit eleifend at quis magna. Nunc condimentum turpis.",
-      stackList: [
-        "javascript",
-        "typescript",
-        "jquery",
-        "nextjs",
-        "java",
-        "saphybris",
-        "spring",
-      ],
+        "I translate Figma designs into responsive frontend designs, catering to both desktop and mobile platforms.",
+      stackList: ["typescript", "nextjs", "tailwind"],
+      url: "https://suri-frontend.vercel.app",
+      label: "SURI",
     },
   ];
 

@@ -50,8 +50,8 @@ const LeftContainer = () => {
       </div>
       <div className="mt-8 max-w-80">
         <Paragraph1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
-          arcu aliquam, mollis urna id, molestie urna.
+          I skillfully craft pixel-perfect interfaces with front-end finesse and
+          backend excellence.
         </Paragraph1>
       </div>
 

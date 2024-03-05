@@ -9,7 +9,7 @@ const RainBackground = ({
   showRainScene: boolean;
 }) => {
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative">
       {/* Render the RainScene component as the background */}
       <RainScene shouldRender={showRainScene} />
       {/* Render children on top of the rain scene */}

@@ -5,6 +5,7 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import RainScene from "./components/Effects/Rain";
 import RainBackground from "./components/Background";
+import WorkDetailModal from "./components/Modal/WorkDetailModal";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,9 +25,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="favicon.ico" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} max-w-screen overflow-x-hidden`}>
+        {/* <WorkDetailModal /> */}
         <RainBackground showRainScene={true}>{children}</RainBackground>
-        {/* {children} */}
       </body>
     </html>
   );

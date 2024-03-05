@@ -42,6 +42,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
     camera.rotation.z = 0.27;
 
     // RENDERER
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(scene.fog.color);
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -55,7 +56,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
 
     // Rain Drop Texture
     const positions: number[] = [];
-    const rainCount = 9500;
+    const rainCount = 7000;
     for (let i = 0; i < rainCount; i++) {
       positions.push(
         Math.random() * 400 - 200,
@@ -73,7 +74,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
 
     const customShader = {
       uniforms: {
-        color: { value: new THREE.Color(0xffffff) },
+        color: { value: new THREE.Color(0xCCCCCC) },
         size: { value: 0.3 },
         time: { value: 0 }, // You can use time to animate the effect if needed
       },
@@ -98,6 +99,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
     };
 
     // Create the material using the custom shader
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     rainMaterial = new THREE.ShaderMaterial(customShader);
 
     const rain = new THREE.Points(rainGeo, rainMaterial);
@@ -150,7 +152,7 @@ const RainScene = ({ shouldRender }: { shouldRender: boolean }) => {
     };
   }, [shouldRender]);
 
-  return <div ref={sceneRef} style={{ display: shouldRender ? "block" : "none" }} className="absolute top-0 -z-50" />;
+  return <div ref={sceneRef} style={{ display: shouldRender ? "block" : "none" }} className="fixed top-0 -z-50" />;
 };
 
 export default RainScene;

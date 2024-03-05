@@ -22,7 +22,7 @@ const ExperienceContainer = () => {
       titleList: ["frontend engineer", "fullstack engineer"],
       companyName: "PT. Astra Digital Mobil",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id arcu aliquam, mollis urna id, molestie urna. Nulla vitae massa et est hendrerit eleifend at quis magna. Nunc condimentum turpis.",
+        "Responsible for creating and managing web applications using HTML, CSS, JavaScript (jQuery), NextJS and Spring MVC. Collaborate across teams to decipher project needs, contribute to agile development, and facilitate the migration to NextJS for enhanced front-end technology.",
       stackList: [
         "javascript",
         "typescript",
