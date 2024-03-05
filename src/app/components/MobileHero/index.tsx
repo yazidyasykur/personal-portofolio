@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Heading1 from "../Typography/Heading1";
 import JobTitle from "../Typography/Title";
