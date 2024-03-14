@@ -23,7 +23,10 @@ const ExperienceCard = ({ data, onOpen }: ExperienceCardProps) => {
             {data.titleList[0]} &nbsp; &#x2022; &nbsp; {data.companyName}
           </div>
           {data.titleList.slice(1).map((title, index) => (
-            <div key={index} className="col-span-8 text-sm text-gray-500">
+            <div
+              key={index}
+              className="col-span-1 md:col-span-8 text-sm text-gray-500"
+            >
               {title}
             </div>
           ))}

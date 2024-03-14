@@ -29,7 +29,7 @@ const ProjectCard = ({ data, onOpenProject }: ProjectCardProps) => {
           height={320}
         />
       </div>
-      <div className="col-span-8 text-sm">
+      <div className="col-span-12 sm:col-span-8 text-sm">
         <div className="capitalize">
           {data.companyName ? (
             <div className=" font-bold">
