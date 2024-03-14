@@ -47,9 +47,9 @@ const ProjectCard = ({ data, onOpenProject }: ProjectCardProps) => {
         <div className="text-sm mt-2">{data.description}</div>
         {data?.url && (
           <Link href={data.url} target={"_blank"} className="">
-            <div className="py-1 px-2 w-fit rounded-md text-sm my-2 hover:bg-white hover:text-black transition-all">
+            <div className="py-1 px-2 w-fit rounded-md text-sm my-2 hover:bg-white hover:text-black transition-all text-nowrap">
               <FontAwesomeIcon icon={faLink} />{" "}
-              <span className="ml-2">{data?.label}</span>
+              <span className="ml-2 text-nowrap">{data?.label}</span>
             </div>
           </Link>
         )}
