@@ -5,7 +5,7 @@ type Paragraph1Props = {
 };
 
 const Paragraph1 = ({ children }: Paragraph1Props) => {
-  return <p>{children}</p>;
+  return <p className="text-sm md:text-base">{children}</p>;
 };
 
 export default Paragraph1;

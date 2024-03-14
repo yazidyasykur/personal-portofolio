@@ -12,7 +12,13 @@ export type ExperienceItem = {
   stackList: string[];
 };
 
-const ExperienceContainer = () => {
+type ExperienceContainerProps = {
+  onOpenExperience: () => void;
+};
+
+const ExperienceContainer = ({
+  onOpenExperience,
+}: ExperienceContainerProps) => {
   const experienceItem: ExperienceItem[] = [
     {
       key: "1",
@@ -38,7 +44,7 @@ const ExperienceContainer = () => {
   return (
     <div className="flex flex-col gap-6 ">
       {experienceItem.map((item, index) => (
-        <ExperienceCard data={item} key={index} />
+        <ExperienceCard data={item} key={index} onOpen={onOpenExperience} />
       ))}
     </div>
   );

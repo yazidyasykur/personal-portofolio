@@ -4,13 +4,15 @@ import { ExperienceItem } from "../../Container/ExperienceContainer";
 
 export type ExperienceCardProps = {
   data: ExperienceItem;
+  onOpen: () => void;
 };
 
-const ExperienceCard = ({ data }: ExperienceCardProps) => {
+const ExperienceCard = ({ data, onOpen }: ExperienceCardProps) => {
   return (
     <div
       className="grid grid-cols-1 md:grid-cols-12 gap-4 px-8 py-4 cursor-pointer rounded-md transition-all hover:bg-white hover:shadow-lg hover:bg-opacity-10 "
       key={data.key}
+      onClick={onOpen}
     >
       <div className="col-span-4 text-sm uppercase">
         {data.startPeriod} - {data.endPeriod}

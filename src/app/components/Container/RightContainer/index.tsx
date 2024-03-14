@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Paragraph1 from "../../Typography/Paragraph1";
 import Heading1 from "../../Typography/Heading1";
 import Heading2 from "../../Typography/Heading2";
@@ -8,6 +10,7 @@ import JobTitle from "../../Typography/Title";
 import { TypeAnimation } from "react-type-animation";
 import NameTag from "../../NameTag";
 import MobileHero from "../../MobileHero";
+import WorkDetailModal from "../../Modal/WorkDetailModal";
 
 const RightContainer = () => {
   const typingSequence = [
@@ -27,12 +30,18 @@ const RightContainer = () => {
     2000,
   ];
 
+  const [isOpen, setOpenModal] = useState<boolean>(false);
+
   return (
-    <div className="py-4 md:py-16">
+    <div className="py-4 md:py-16" id="right-container">
+      {/* <WorkDetailModal isOpen={isOpen} onClose={() => setOpenModal(false)} /> */}
       <div className="block md:hidden">
         <MobileHero />
       </div>
-      <div className="px-4 md:px-8 text-justify">
+      <div className="px-4 md:px-8 text-justify" id="summary">
+        <div className="mb-8 font-bold">
+          <Heading1>Summary</Heading1>
+        </div>
         <Paragraph1>
           &nbsp;&nbsp;With a year of hands-on experience as a Full-stack
           Developer, I specialize in using front-end technologies like jQuery
@@ -56,21 +65,21 @@ const RightContainer = () => {
         </Paragraph1>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-16" id="experience">
         <div className="px-4 md:px-8 font-bold">
           <Heading1>Experience</Heading1>
         </div>
-        <div className="mt-8">
-          <ExperienceContainer />
+        <div className="mt-8" id="experience">
+          <ExperienceContainer onOpenExperience={() => setOpenModal(true)} />
         </div>
       </div>
 
-      <div className=" mt-16">
+      <div className=" mt-16" id="projects">
         <div className="px-4 md:px-8 font-bold">
           <Heading1>Projects</Heading1>
         </div>
         <div className="mt-8">
-          <ProjectContainer />
+          <ProjectContainer onOpenProject={() => setOpenModal(true)} />
         </div>
       </div>
     </div>

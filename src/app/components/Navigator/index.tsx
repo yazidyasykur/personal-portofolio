@@ -1,6 +1,7 @@
 "use client";
 
-import React, { MouseEvent, SyntheticEvent, useState } from "react";
+import React, { MouseEvent, SyntheticEvent, useEffect, useState } from "react";
+import RightContainer from "../Container/RightContainer";
 
 type ItemType = {
   key: string;
@@ -12,20 +13,20 @@ type ItemType = {
 const Navigator = () => {
   const [items, setItems] = useState<ItemType[]>([
     {
-      key: "about",
-      location: "#",
+      key: "summary",
+      location: "#summary",
       label: "ABOUT",
       isActive: true,
     },
     {
       key: "experience",
-      location: "#",
+      location: "#experience",
       label: "EXPERIENCE",
       isActive: false,
     },
     {
       key: "projects",
-      location: "#",
+      location: "#projects",
       label: "PROJECTS",
       isActive: false,
     },
@@ -36,22 +37,73 @@ const Navigator = () => {
     const id = target.id;
 
     if (!id) return;
-    setItems(
-      items.map((item) => {
-        if (item.key === id) {
-          return {
-            ...item,
-            isActive: true,
-          };
-        } else {
-          return {
-            ...item,
-            isActive: false,
-          };
-        }
-      })
-    );
+
+    const element = document.getElementById("right-container");
+    const activeView = element?.querySelector(`#${id}`);
+    activeView?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleScroll = () => {
+    const scrollValue = window.scrollY;
+
+    if (scrollValue <= 70) {
+      setItems(
+        items.map((item) => {
+          if (item.key === "summary") {
+            return {
+              ...item,
+              isActive: true,
+            };
+          } else {
+            return {
+              ...item,
+              isActive: false,
+            };
+          }
+        })
+      );
+    } else if (scrollValue <= 620) {
+      setItems(
+        items.map((item) => {
+          if (item.key === "experience") {
+            return {
+              ...item,
+              isActive: true,
+            };
+          } else {
+            return {
+              ...item,
+              isActive: false,
+            };
+          }
+        })
+      );
+    } else if (scrollValue <= 1020) {
+      setItems(
+        items.map((item) => {
+          if (item.key === "projects") {
+            return {
+              ...item,
+              isActive: true,
+            };
+          } else {
+            return {
+              ...item,
+              isActive: false,
+            };
+          }
+        })
+      );
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   return (
     <div>

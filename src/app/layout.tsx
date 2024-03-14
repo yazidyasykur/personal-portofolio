@@ -26,7 +26,6 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" sizes="any" />
       </head>
       <body className={`${inter.className} max-w-screen overflow-x-hidden`}>
-        {/* <WorkDetailModal /> */}
         <RainBackground showRainScene={true}>{children}</RainBackground>
       </body>
     </html>

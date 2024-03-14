@@ -73,6 +73,12 @@ const stackList = [
     color: "#FFFFFF",
     backgroundColor: "#1890FF",
   },
+  {
+    key: "react",
+    stackName: "React JS",
+    color: "#61DAFB",
+    backgroundColor: "#FFFFFF",
+  },
 ];
 
 const getStack = (stackName: string) => {

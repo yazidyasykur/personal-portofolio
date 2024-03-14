@@ -5,6 +5,7 @@ import RightContainer from "./components/Container/RightContainer";
 import RainScene from "./components/Effects/Rain";
 import Drawer from "react-modern-drawer";
 import MobileDrawer from "./components/Drawer";
+import WorkDetailModal from "./components/Modal/WorkDetailModal";
 
 export default function Home() {
   return (

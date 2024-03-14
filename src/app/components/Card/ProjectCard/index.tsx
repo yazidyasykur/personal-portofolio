@@ -10,26 +10,34 @@ import Link from "next/link";
 
 export type ProjectCardProps = {
   data: ProjectItem;
+  onOpenProject: () => void;
 };
 
-const ProjectCard = ({ data }: ProjectCardProps) => {
+const ProjectCard = ({ data, onOpenProject }: ProjectCardProps) => {
   return (
     <div
-      className="grid grid-cols-12 gap-4 px-8 py-4 rounded-md transition-all hover:bg-white hover:shadow-lg hover:bg-opacity-10 "
+      className="grid cursor-pointer sm:grid-cols-12 grid-cols-1 gap-4 px-8 py-4 rounded-md transition-all hover:bg-white hover:shadow-lg hover:bg-opacity-10 "
       key={data.key}
+      onClick={onOpenProject}
     >
-      <div className="col-span-4">
+      <div className="sm:col-span-4 col-span-12">
         <Image
           className="rounded-md border-8 border-white shadow-lg"
           alt="project image"
-          src={sampleImage}
+          src={data.galleryImages[0]}
+          width={576}
+          height={320}
         />
       </div>
       <div className="col-span-8 text-sm">
         <div className="capitalize">
-          <div className=" font-bold">
-            {data.titleList[0]} &nbsp; &#x2022; &nbsp; {data.companyName}
-          </div>
+          {data.companyName ? (
+            <div className=" font-bold">
+              {data.titleList[0]} &nbsp; &#x2022; &nbsp; {data.companyName}
+            </div>
+          ) : (
+            <div className=" font-bold">{data.titleList[0]}</div>
+          )}
           {data.titleList.slice(1).map((title, index) => (
             <div key={index} className="col-span-8 text-sm text-gray-500">
               {title}
@@ -38,11 +46,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
         </div>
         <div className="text-sm mt-2">{data.description}</div>
         {data?.url && (
-          <Link
-            href={"https://suri-frontend.vercel.app"}
-            target={"_blank"}
-            className=""
-          >
+          <Link href={data.url} target={"_blank"} className="">
             <div className="py-1 px-2 w-fit rounded-md text-sm my-2 hover:bg-white hover:text-black transition-all">
               <FontAwesomeIcon icon={faLink} />{" "}
               <span className="ml-2">{data?.label}</span>
